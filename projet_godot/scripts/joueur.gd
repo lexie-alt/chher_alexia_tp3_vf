@@ -1,3 +1,4 @@
+class_name Joueur
 extends CharacterBody2D
 
 const SPEED = 300.0

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bxbikylofm7lk"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
