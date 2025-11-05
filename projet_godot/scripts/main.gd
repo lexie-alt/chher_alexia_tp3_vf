@@ -7,6 +7,7 @@ var objectif_gem_niveau_2 = 4
 
 signal cle_collectee
 
+
 func debloquer_cle(cle):
 	cle_collectee.emit(cle)
 	

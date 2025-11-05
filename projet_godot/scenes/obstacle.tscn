@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://g7xj5h2qmact"]
+
+[ext_resource type="Texture2D" uid="uid://cyq48084dae1m" path="res://assets/sprites/lock_red.png" id="1_7ukg5"]
+[ext_resource type="Script" uid="uid://dxx8r5llislh0" path="res://scripts/obstacle.gd" id="1_drdry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drdry"]
+size = Vector2(75.5, 75)
+
+[node name="Obstacle" type="StaticBody2D"]
+script = ExtResource("1_drdry")
+
+[node name="LockRed" type="Sprite2D" parent="."]
+position = Vector2(37, -36)
+texture = ExtResource("1_7ukg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37, -37)
+shape = SubResource("RectangleShape2D_drdry")

@@ -1,17 +1,43 @@
-[gd_scene format=3 uid="uid://bxbikylofm7lk"]
+[gd_scene load_steps=4 format=3 uid="uid://bxbikylofm7lk"]
+
+[ext_resource type="Script" uid="uid://d0j6jc1sdrj82" path="res://scripts/hud.gd" id="1_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://d2agqiwhue3ex" path="res://assets/sprites/gemYellow.png" id="1_oo0fn"]
+[ext_resource type="AudioStream" uid="uid://belx7wd42olnc" path="res://assets/sound/sfx_coin.ogg" id="2_5ysmq"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_5ysmq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = 14.0
+offset_right = -807.0
+offset_bottom = 78.0
+grow_horizontal = 2
+color = Color(0.145098, 0.145098, 0.145098, 0.592157)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_direction = 2
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 73.0
+grow_horizontal = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
+texture = ExtResource("1_oo0fn")
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="GemLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+text = "0"
+vertical_alignment = 1
+
+[node name="GemSFX" type="AudioStreamPlayer" parent="HBoxContainer/GemLabel"]
+unique_name_in_owner = true
+stream = ExtResource("2_5ysmq")
+volume_db = -0.6
