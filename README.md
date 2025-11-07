@@ -1,7 +1,7 @@
 # chher_alexia_tp3_vf
 
-[!IMPORTANT] L'exportation Web n'est pas à jour. N'a pas les presets sur mon ordi pour faire les exportations Web.
-
+> [!WARNING]
+> L'exportation Web n'est pas à jour. N'a pas les presets sur mon ordi pour faire les exportations Web.
 
 ## Thématique du jeu
 
