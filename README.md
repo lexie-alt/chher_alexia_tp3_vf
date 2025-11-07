@@ -1,19 +1,20 @@
-## chher_alexia_tp3_vf
+# chher_alexia_tp3_vf
 
 
-# thématique du jeu
+## thématique du jeu
 
 Projet-exemple de jeu de plateforme 2D fait en Godot. Créé pour le cours Interactivité ludique, Automne 2025, Collège Montmorency.
 
-# niveau difficulté
+## niveau difficulté
 * premier niveau simple
 * deuxieme niveau intermédiare et collision wall et ascenseur
 * troisième niveau clé et débloquer porte
 
-# affordance
+
+## affordance
 bruit : saut, changement de scène, ramasser gems
 
-# hub
+## hub
 compte ramasse gems
 
 ## Crédits
