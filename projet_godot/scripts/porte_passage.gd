@@ -4,4 +4,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Joueur:
+		$SfxPassage.play()
+		await $SfxPassage.finished
 		Main.changer_scene(nouvelle_scene)
+		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bmg7d2unaesur"]
+[gd_scene load_steps=15 format=4 uid="uid://bmg7d2unaesur"]
 
 [ext_resource type="PackedScene" uid="uid://bxbikylofm7lk" path="res://scenes/hud.tscn" id="1_47npi"]
 [ext_resource type="TileSet" uid="uid://cwqycux5h0q2u" path="res://assets/spritesheets/paysage_tile_set.tres" id="2_i33ng"]
@@ -6,15 +6,17 @@
 [ext_resource type="Script" uid="uid://cnf4o5qr4x1by" path="res://scripts/controle_camera.gd" id="4_47npi"]
 [ext_resource type="PackedScene" uid="uid://cjb71cl73smtl" path="res://scenes/fin.tscn" id="4_a4ybn"]
 [ext_resource type="PackedScene" uid="uid://j05okgtuaimk" path="res://scenes/menu_controle.tscn" id="5_s88c3"]
+[ext_resource type="AudioStream" uid="uid://ytl1umjk8dh8" path="res://assets/sound/sfx_passage.ogg" id="5_tqhsk"]
 [ext_resource type="Script" uid="uid://b8iene60fkydr" path="res://scripts/porte_passage.gd" id="6_tqhsk"]
 [ext_resource type="Texture2D" uid="uid://b5dod1k8i2c52" path="res://assets/sprites/doorOpen.png" id="7_jty5g"]
 [ext_resource type="Texture2D" uid="uid://c2wilqdecxx6b" path="res://assets/sprites/doorOpenTop.png" id="8_2qd07"]
 [ext_resource type="PackedScene" uid="uid://g7xj5h2qmact" path="res://scenes/obstacle.tscn" id="8_wdy0q"]
 [ext_resource type="PackedScene" uid="uid://kqe2ayfsh5om" path="res://scenes/cle_rouge.tscn" id="9_i33ng"]
+[ext_resource type="PackedScene" uid="uid://ct4sh4tmry5bm" path="res://scenes/gem.tscn" id="13_tqhsk"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cpnv7"]
-radius = 33.0
-height = 110.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jty5g"]
+radius = 38.0
+height = 142.0
 
 [node name="Niveau03" type="Node"]
 
@@ -28,23 +30,26 @@ tile_set = ExtResource("2_i33ng")
 tile_map_data = PackedByteArray("AAD+/w0AAAALAAwAAAD//w0AAAALAAwAAAAAAA0AAAALAAwAAAABAA0AAAALAAwAAAACAA0AAAALAAwAAAADAA0AAAALAAwAAAAEAA0AAAALAAwAAAAFAA0AAAALAAwAAAAGAA0AAAALAAwAAAAHAA0AAAALAAwAAAAIAA0AAAALAAwAAAAJAA0AAAALAAwAAAAKAA0AAAALAAwAAAALAA0AAAALAAwAAAAMAA0AAAALAAwAAAANAA0AAAALAAwAAAAOAA0AAAALAAwAAAD+/wwAAAALAAsAAAD//wwAAAALAAsAAAAAAAwAAAALAAsAAAABAAwAAAALAAsAAAACAAwAAAALAAsAAAADAAwAAAALAAsAAAAEAAwAAAALAAsAAAAFAAwAAAALAAsAAAAGAAwAAAALAAsAAAAHAAwAAAALAAsAAAAIAAwAAAALAAsAAAAJAAwAAAALAAsAAAAKAAwAAAALAAsAAAALAAwAAAALAAsAAAAMAAwAAAALAAsAAAANAAwAAAALAAsAAAAOAAwAAAALAAsAAAAOAAUAAAALAAIAAAAJAAgAAAAOAAkAAAD//wkAAAAPAA0AAAAPAAUAAAAPAA0AAAAPAAwAAAALAAsAAAAPAA0AAAALAAwAAAAQAAwAAAALAAsAAAAQAA0AAAALAAwAAAARAAwAAAALAAsAAAARAA0AAAALAAwAAAASAAwAAAALAAsAAAASAA0AAAALAAwAAAATAAwAAAALAAsAAAATAA0AAAALAAwAAAAUAAwAAAALAAsAAAAUAA0AAAALAAwAAAAVAAwAAAALAAsAAAAVAA0AAAALAAwAAAAWAAwAAAALAAsAAAAWAA0AAAALAAwAAAAXAAwAAAALAAsAAAAXAA0AAAALAAwAAAAYAAwAAAALAAsAAAAYAA0AAAALAAwAAAAZAAwAAAALAAsAAAAZAA0AAAALAAwAAAAaAAwAAAALAAsAAAAaAA0AAAALAAwAAAD7/wwAAAALAAsAAAD7/w0AAAALAAwAAAD8/wwAAAALAAsAAAD8/w0AAAALAAwAAAD9/wwAAAALAAsAAAD9/w0AAAALAAwAAAD4/wwAAAALAAsAAAD4/w0AAAALAAwAAAD5/wwAAAALAAsAAAD5/w0AAAALAAwAAAD6/wwAAAALAAsAAAD6/w0AAAALAAwAAAD7/wcAAAARAAsAAAD6/wkAAAABAAoAAAD7/wkAAAABAAoAAAD8/wkAAAABAAoAAAD7/woAAAAJAAkAAAD8/woAAAAJAAkAAAD9/woAAAARAAsAAAD6/woAAAAJAAkAAAD5/woAAAABAAoAAAD+/wYAAAARAAsAAAAHAAgAAAARAA0AAAAGAAcAAAARAAwAAAAFAAgAAAARAAwAAAAHAAcAAAARAAwAAAAIAAgAAAARAAsAAAAFAAUAAAARAAwAAAAFAAYAAAARAAwAAAAFAAcAAAARAAwAAAA=")
 tile_set = ExtResource("2_i33ng")
 
-[node name="MenuControle" parent="." instance=ExtResource("5_s88c3")]
-
 [node name="porte_passage" type="Area2D" parent="."]
 script = ExtResource("6_tqhsk")
 nouvelle_scene = ExtResource("4_a4ybn")
 
+[node name="SfxPassage" type="AudioStreamPlayer" parent="porte_passage"]
+stream = ExtResource("5_tqhsk")
+
 [node name="DoorOpen" type="Sprite2D" parent="porte_passage"]
-position = Vector2(468, 546)
+position = Vector2(470, 543)
 texture = ExtResource("7_jty5g")
 
 [node name="DoorOpenTop" type="Sprite2D" parent="porte_passage"]
-position = Vector2(468, 479)
+position = Vector2(470, 474)
 texture = ExtResource("8_2qd07")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="porte_passage"]
-position = Vector2(469, 533)
-shape = SubResource("CapsuleShape2D_cpnv7")
+position = Vector2(470, 524)
+shape = SubResource("CapsuleShape2D_jty5g")
+
+[node name="MenuControle" parent="." instance=ExtResource("5_s88c3")]
 
 [node name="Joueur" parent="." instance=ExtResource("3_a4ybn")]
 position = Vector2(1090, 357)
@@ -60,29 +65,48 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource("4_47npi")
 
-[node name="Obstacle" parent="." groups=["cle_rouge"] instance=ExtResource("8_wdy0q")]
+[node name="Obstacle" parent="." instance=ExtResource("8_wdy0q")]
 position = Vector2(509, 583)
+scale = Vector2(0.9, 0.9)
 
-[node name="Obstacle2" parent="." groups=["cle_rouge"] instance=ExtResource("8_wdy0q")]
-position = Vector2(509, 507)
+[node name="Obstacle2" parent="." instance=ExtResource("8_wdy0q")]
+position = Vector2(509, 511)
+scale = Vector2(0.9, 0.9)
 
-[node name="Obstacle3" parent="." groups=["cle_rouge"] instance=ExtResource("8_wdy0q")]
-position = Vector2(508, 432)
+[node name="Obstacle3" parent="." instance=ExtResource("8_wdy0q")]
+position = Vector2(508, 437)
+scale = Vector2(0.9, 0.9)
 
-[node name="Obstacle4" parent="." groups=["cle_rouge"] instance=ExtResource("8_wdy0q")]
-position = Vector2(434, 432)
+[node name="Obstacle4" parent="." instance=ExtResource("8_wdy0q")]
+position = Vector2(436, 437)
+scale = Vector2(0.9, 0.9)
 
-[node name="Obstacle5" parent="." groups=["cle_rouge"] instance=ExtResource("8_wdy0q")]
-position = Vector2(356, 432)
+[node name="Obstacle5" parent="." instance=ExtResource("8_wdy0q")]
+position = Vector2(363, 437)
+scale = Vector2(0.9, 0.9)
 
-[node name="Obstacle6" parent="." groups=["cle_rouge"] instance=ExtResource("8_wdy0q")]
-position = Vector2(357, 506)
+[node name="Obstacle6" parent="." instance=ExtResource("8_wdy0q")]
+position = Vector2(365, 508)
+scale = Vector2(0.9, 0.9)
 
-[node name="Obstacle7" parent="." groups=["cle_rouge"] instance=ExtResource("8_wdy0q")]
-position = Vector2(358, 583)
+[node name="Obstacle7" parent="." instance=ExtResource("8_wdy0q")]
+position = Vector2(365, 580)
+scale = Vector2(0.9, 0.9)
 
 [node name="clerouge" parent="." instance=ExtResource("9_i33ng")]
 position = Vector2(-332, 467)
+
+[node name="Gem" parent="." instance=ExtResource("13_tqhsk")]
+position = Vector2(124, 71)
+
+[node name="Gem2" parent="." instance=ExtResource("13_tqhsk")]
+position = Vector2(1, 556)
+
+[node name="Gem3" parent="." instance=ExtResource("13_tqhsk")]
+position = Vector2(736, 324)
+
+[node name="Gem4" parent="." instance=ExtResource("13_tqhsk")]
+position = Vector2(469, 297)
 
 [connection signal="body_entered" from="porte_passage" to="porte_passage" method="_on_body_entered"]
 [connection signal="body_entered" from="clerouge" to="Obstacle" method="_on_clerouge_body_entered"]
