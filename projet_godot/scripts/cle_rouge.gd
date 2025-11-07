@@ -1,9 +1,11 @@
 extends Area2D
 
-@export var groupe_cle:String
+@export var id_cle:String
 
 func _on_body_entered(body: Node2D) -> void:
-	Main.debloquer_cle(self)
+	if body is Joueur:
+		print("collecter cle")
+		Main.debloquer_cle(self)
 	
 	# Desactive collision
 	$CollisionShape2D.disabled = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct4sh4tmry5bm"]
+[gd_scene load_steps=5 format=3 uid="uid://ct4sh4tmry5bm"]
 
 [ext_resource type="Script" uid="uid://bg2c0r810dd7j" path="res://scripts/gem.gd" id="1_mpwtx"]
 [ext_resource type="Texture2D" uid="uid://d2agqiwhue3ex" path="res://assets/sprites/gemYellow.png" id="2_bhq7q"]
+[ext_resource type="AudioStream" uid="uid://belx7wd42olnc" path="res://assets/sound/sfx_coin.ogg" id="3_bhq7q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfl10"]
 radius = 18.0
@@ -14,5 +15,8 @@ shape = SubResource("CircleShape2D_wfl10")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bhq7q")
+
+[node name="SfxCoin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bhq7q")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

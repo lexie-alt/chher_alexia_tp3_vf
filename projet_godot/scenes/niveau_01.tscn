@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://c3r5lc1xlyn31"]
+[gd_scene load_steps=13 format=4 uid="uid://c3r5lc1xlyn31"]
 
+[ext_resource type="PackedScene" uid="uid://bxbikylofm7lk" path="res://scenes/hud.tscn" id="1_r5xcr"]
 [ext_resource type="PackedScene" uid="uid://df4o6yn6uk8hi" path="res://scenes/niveau_02.tscn" id="2_3ph3b"]
 [ext_resource type="PackedScene" uid="uid://ct4sh4tmry5bm" path="res://scenes/gem.tscn" id="6_1osi0"]
 [ext_resource type="TileSet" uid="uid://cwqycux5h0q2u" path="res://assets/spritesheets/paysage_tile_set.tres" id="6_gcxxr"]
@@ -16,6 +17,8 @@ radius = 33.0
 height = 110.0
 
 [node name="Niveau01" type="Node"]
+
+[node name="Hud" parent="." instance=ExtResource("1_r5xcr")]
 
 [node name="porte_passage" type="Area2D" parent="."]
 script = ExtResource("6_iwpas")

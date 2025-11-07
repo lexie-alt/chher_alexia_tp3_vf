@@ -6,4 +6,3 @@ func _ready() -> void:
 
 func retroaction_gem(valeur_gem):
 	%GemLabel.text = str(valeur_gem)
-	%GemSFX.play()
