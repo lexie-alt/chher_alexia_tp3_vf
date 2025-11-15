@@ -31,6 +31,14 @@ func continuer():
 	$PauseMenu.hide()
 	%InstructionsScreen.hide()
 	get_tree().paused = false
+	
+	
+func rejouer(PackedScene):
+	print("PLAY REJOUER")
+	$PauseButton.icon = PAUSE_ICON
+	$PauseMenu.hide()
+	%InstructionsScreen.hide()
+	get_tree().change_scene_to_file
 
 
 func _on_show_instructions_button_pressed() -> void:
@@ -41,3 +49,7 @@ func _on_show_instructions_button_pressed() -> void:
 func _on_close_instructions_button_pressed() -> void:
 	%InstructionsScreen.hide()
 	%ShowInstructionsButton.grab_focus.call_deferred()
+
+
+func _on_rejouer_button_pressed() -> void:
+	pass # Replace with function body.

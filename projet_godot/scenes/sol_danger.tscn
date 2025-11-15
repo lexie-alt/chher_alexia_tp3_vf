@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvmtijtot8f8w"]
+
+[ext_resource type="Texture2D" uid="uid://dmtxqevnt64xd" path="res://assets/sprites/terrain_grass_block_top.png" id="1_qt88u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4vya"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.07288e-06, 1.07288e-06)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("1_qt88u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r4vya")
