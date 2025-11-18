@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c3r5lc1xlyn31"]
+[gd_scene load_steps=15 format=4 uid="uid://c3r5lc1xlyn31"]
 
 [ext_resource type="PackedScene" uid="uid://bxbikylofm7lk" path="res://scenes/hud.tscn" id="1_r5xcr"]
 [ext_resource type="PackedScene" uid="uid://df4o6yn6uk8hi" path="res://scenes/niveau_02.tscn" id="2_3ph3b"]
@@ -13,19 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://j05okgtuaimk" path="res://scenes/menu_controle.tscn" id="11_2it2b"]
 [ext_resource type="AudioStream" uid="uid://ytl1umjk8dh8" path="res://assets/sound/sfx_passage.ogg" id="12_cpmtm"]
 
-[sub_resource type="GDScript" id="GDScript_cpmtm"]
-script/source = "extends Node
-"
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xcab3"]
 radius = 40.0
 height = 130.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpmtm"]
-size = Vector2(2302, 47)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpmtm"]
+distance = -761.0
 
 [node name="Niveau01" type="Node"]
-script = SubResource("GDScript_cpmtm")
 
 [node name="Hud" parent="." instance=ExtResource("1_r5xcr")]
 
@@ -65,8 +60,6 @@ position = Vector2(505, 278)
 
 [node name="Joueur" parent="." instance=ExtResource("8_4dxjv")]
 position = Vector2(75, 444)
-collision_layer = 3
-collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Joueur"]
@@ -82,12 +75,9 @@ script = ExtResource("9_3xvm2")
 [node name="MenuControle" parent="." instance=ExtResource("11_2it2b")]
 
 [node name="vide" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vide"]
-position = Vector2(753, 755.5)
-shape = SubResource("RectangleShape2D_cpmtm")
+shape = SubResource("WorldBoundaryShape2D_cpmtm")
 
 [connection signal="body_entered" from="porte_passage" to="porte_passage" method="_on_body_entered"]
 [connection signal="body_entered" from="PanneauMessage" to="PanneauMessage" method="show_message"]

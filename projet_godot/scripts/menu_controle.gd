@@ -33,12 +33,15 @@ func continuer():
 	get_tree().paused = false
 	
 	
-func rejouer(PackedScene):
+func rejouer():
 	print("PLAY REJOUER")
 	$PauseButton.icon = PAUSE_ICON
 	$PauseMenu.hide()
 	%InstructionsScreen.hide()
-	get_tree().change_scene_to_file
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/niveau_01.tscn")
+	Main.reset()
+	
 
 
 func _on_show_instructions_button_pressed() -> void:

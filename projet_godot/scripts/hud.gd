@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@export var gem = 0
+
 func _ready() -> void:
 	%GemLabel.text = str(Main.gem)
 	Main.gem_collectee.connect(retroaction_gem)	

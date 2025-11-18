@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bmg7d2unaesur"]
+[gd_scene load_steps=16 format=4 uid="uid://bmg7d2unaesur"]
 
 [ext_resource type="PackedScene" uid="uid://bxbikylofm7lk" path="res://scenes/hud.tscn" id="1_47npi"]
 [ext_resource type="TileSet" uid="uid://cwqycux5h0q2u" path="res://assets/spritesheets/paysage_tile_set.tres" id="2_i33ng"]
@@ -17,6 +17,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jty5g"]
 radius = 38.0
 height = 142.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqhsk"]
+size = Vector2(2302, 47)
 
 [node name="Niveau03" type="Node"]
 
@@ -107,6 +110,14 @@ position = Vector2(736, 324)
 
 [node name="Gem4" parent="." instance=ExtResource("13_tqhsk")]
 position = Vector2(469, 297)
+
+[node name="vide" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vide"]
+position = Vector2(-20, 754)
+shape = SubResource("RectangleShape2D_tqhsk")
 
 [connection signal="body_entered" from="porte_passage" to="porte_passage" method="_on_body_entered"]
 [connection signal="body_entered" from="clerouge" to="Obstacle" method="_on_clerouge_body_entered"]
