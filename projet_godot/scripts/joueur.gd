@@ -58,5 +58,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_vide_body_entered(body: Node2D) -> void:
+	print("vide")
 	get_tree().reload_current_scene()
-	Main.reset()
+	Main.reset()# Replace with function body.
