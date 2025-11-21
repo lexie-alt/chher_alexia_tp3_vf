@@ -55,5 +55,4 @@ func _on_close_instructions_button_pressed() -> void:
 
 
 func _on_rejouer_button_pressed() -> void:
-	print("appuyer REJOUER")
 	pass # Replace with function body.
