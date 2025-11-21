@@ -61,8 +61,3 @@ func _on_close_instructions_button_pressed() -> void:
 	$SfxSelect.play()
 	%InstructionsScreen.hide()
 	%ShowInstructionsButton.grab_focus.call_deferred()
-
-
-#func _on_rejouer_button_pressed() -> void:
-	#$SfxSelect.play()
-	#pass # Replace with function body.
