@@ -62,7 +62,7 @@ func _on_vide_body_entered(body: Node2D) -> void:
 	$SfxDisappear.play()
 	await $SfxDisappear.finished
 	await get_tree().process_frame
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/niveau_01.tscn")
 	Main.reset()
 
 
@@ -71,5 +71,5 @@ func _on_vide_2_body_entered(body: Node2D) -> void:
 	$SfxDisappear.play()
 	await $SfxDisappear.finished
 	await get_tree().process_frame
-	get_tree().reload_current_scene()
-	Main.reset() 
+	get_tree().change_scene_to_file("res://scenes/niveau_01.tscn")
+	Main.reset()
