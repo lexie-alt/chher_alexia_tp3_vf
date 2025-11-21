@@ -1,5 +1,7 @@
 # chher_alexia_tp3_vf
 
+Version navigateur https://lexie-alt.github.io/chher_alexia_tp3_vf/
+
 > [!NOTE]
 > L'exportation Web est à jour.
 
