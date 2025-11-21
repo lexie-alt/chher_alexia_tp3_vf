@@ -111,13 +111,14 @@ position = Vector2(736, 324)
 [node name="Gem4" parent="." instance=ExtResource("13_tqhsk")]
 position = Vector2(469, 297)
 
-[node name="vide" type="Area2D" parent="."]
+[node name="vide 2" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vide"]
-position = Vector2(-20, 754)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vide 2"]
+position = Vector2(200, 739)
 shape = SubResource("RectangleShape2D_tqhsk")
 
 [connection signal="body_entered" from="porte_passage" to="porte_passage" method="_on_body_entered"]
 [connection signal="body_entered" from="clerouge" to="Obstacle" method="_on_clerouge_body_entered"]
+[connection signal="body_entered" from="vide 2" to="Joueur" method="_on_vide_2_body_entered"]

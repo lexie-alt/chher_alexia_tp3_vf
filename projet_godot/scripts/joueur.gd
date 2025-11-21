@@ -58,5 +58,18 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_vide_body_entered(body: Node2D) -> void:
+	print("tomber vide")
+	$SfxDisappear.play()
+	await $SfxDisappear.finished
+	await get_tree().process_frame
 	get_tree().reload_current_scene()
 	Main.reset()
+
+
+func _on_vide_2_body_entered(body: Node2D) -> void:
+	print("tomber vide")
+	$SfxDisappear.play()
+	await $SfxDisappear.finished
+	await get_tree().process_frame
+	get_tree().reload_current_scene()
+	Main.reset() 

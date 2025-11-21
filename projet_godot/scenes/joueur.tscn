@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dirydc1jhbrdb"]
+[gd_scene load_steps=12 format=3 uid="uid://dirydc1jhbrdb"]
 
 [ext_resource type="Texture2D" uid="uid://b8rri5a137hlb" path="res://assets/spritesheets/spritesheet-characters-default.png" id="1_r36ky"]
 [ext_resource type="Script" uid="uid://c6f6th35eu1tn" path="res://scripts/joueur.gd" id="1_uj1k6"]
 [ext_resource type="AudioStream" uid="uid://bstsdxk1htro6" path="res://assets/sound/sfx_jump.ogg" id="2_2y66e"]
+[ext_resource type="AudioStream" uid="uid://nouvrbtydivy" path="res://assets/sound/sfx_disappear.ogg" id="4_ivebw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj1k6"]
 atlas = ExtResource("1_r36ky")
@@ -79,3 +80,6 @@ animation = &"promener"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -48)
 shape = SubResource("RectangleShape2D_uj1k6")
+
+[node name="SfxDisappear" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ivebw")

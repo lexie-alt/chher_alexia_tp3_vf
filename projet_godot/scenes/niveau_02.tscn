@@ -302,6 +302,9 @@ position = Vector2(1511, 71)
 [node name="Gem5" parent="." instance=ExtResource("16_w5h1h")]
 position = Vector2(1308, 330)
 
+[node name="Gem6" parent="." instance=ExtResource("16_w5h1h")]
+position = Vector2(829, 26)
+
 [node name="MenuControle" parent="." instance=ExtResource("12_danug")]
 
 [node name="Joueur" parent="." instance=ExtResource("2_ktk5d")]
@@ -318,9 +321,6 @@ limit_bottom = 896
 position_smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource("4_5hoti")
-
-[node name="Gem6" parent="." instance=ExtResource("16_w5h1h")]
-position = Vector2(829, 26)
 
 [connection signal="body_entered" from="porte_passage" to="porte_passage" method="_on_body_entered"]
 [connection signal="body_entered" from="PanneauMessage" to="PanneauMessage" method="show_message"]

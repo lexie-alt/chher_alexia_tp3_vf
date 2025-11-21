@@ -19,6 +19,7 @@ func _on_pause_button_toggled(toggled_on: bool) -> void:
 
 func pauser():
 	print("PAUSE MODE")
+	$SfxSelect.play()
 	$PauseButton.icon = PLAY_ICON
 	$PauseMenu.show()
 	get_tree().paused = true
@@ -27,6 +28,7 @@ func pauser():
 
 func continuer():
 	print("PLAY MODE")
+	$SfxSelect.play()
 	$PauseButton.icon = PAUSE_ICON
 	$PauseMenu.hide()
 	%InstructionsScreen.hide()
@@ -35,24 +37,32 @@ func continuer():
 	
 func rejouer():
 	print("PLAY REJOUER")
+	$SfxSelect.play()
+	await $SfxSelect.finished
 	$PauseButton.icon = PAUSE_ICON
 	$PauseMenu.hide()
 	%InstructionsScreen.hide()
 	get_tree().paused = false
+	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://scenes/niveau_01.tscn")
 	Main.reset()
 	
 
 
 func _on_show_instructions_button_pressed() -> void:
+	print("voir instruction")
+	$SfxSelect.play()
 	%InstructionsScreen.show()
 	%InstructionsScreen/CloseButton.grab_focus.call_deferred()
 
 
 func _on_close_instructions_button_pressed() -> void:
+	print("instruction fermer")
+	$SfxSelect.play()
 	%InstructionsScreen.hide()
 	%ShowInstructionsButton.grab_focus.call_deferred()
 
 
-func _on_rejouer_button_pressed() -> void:
-	pass # Replace with function body.
+#func _on_rejouer_button_pressed() -> void:
+	#$SfxSelect.play()
+	#pass # Replace with function body.

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://j05okgtuaimk"]
+[gd_scene load_steps=10 format=3 uid="uid://j05okgtuaimk"]
 
 [ext_resource type="Script" uid="uid://be02vcw1pg0va" path="res://scripts/menu_controle.gd" id="1_5qrj1"]
 [ext_resource type="Texture2D" uid="uid://crhkoo4vld02q" path="res://assets/spritesheets/close_icon.tres" id="2_5qrj1"]
+[ext_resource type="AudioStream" uid="uid://cbb0u5rq0woah" path="res://assets/sound/sfx_select.ogg" id="3_kftfl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cixlm"]
 bg_color = Color(0.498039, 0.498039, 0.498039, 0.682353)
@@ -168,6 +169,9 @@ toggle_mode = true
 shortcut = SubResource("Shortcut_kftfl")
 icon = SubResource("AtlasTexture_cixlm")
 flat = true
+
+[node name="SfxSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kftfl")
 
 [connection signal="pressed" from="PauseMenu/ShowInstructionsButton" to="." method="_on_show_instructions_button_pressed"]
 [connection signal="pressed" from="PauseMenu/ContinueButton" to="." method="continuer"]
